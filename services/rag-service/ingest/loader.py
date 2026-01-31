@@ -5,7 +5,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parents[3]
 
 def load_documents():
-    txt_path = BASE_DIR / "data" / "raw" / "one_piece.txt"
+    txt_path = BASE_DIR / "services" / "data" / "raw" / "one_piece.txt"
 
     if not txt_path.exists():
         raise FileNotFoundError(f"File not found: {txt_path}")
