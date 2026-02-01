@@ -1,0 +1,45 @@
+llmops-project/
+├── services/
+│   ├── api-gateway/
+│   │   ├── main.py
+│   │   └── routes/chat.py
+│   │
+│   ├── orchestrator/
+│   │   ├── router.py
+│   │   ├── prompts/system_rag.txt
+│   │   └── chains/rag_chain.py
+│   │
+│   ├── rag-service/
+│   │   ├── ingest/
+│   │   │   ├── loader.py
+│   │   │   ├── chunker.py
+│   │   │   ├── embedder.py
+│   │   │   └── run.py
+│   │   ├── vector_store.py
+│   │   └── retriever.py
+│   │
+│   └── inference-service/
+│       └── model_loader.py
+│
+├── data/raw/docs.csv
+├── scripts/reindex.sh
+├── .env.example
+└── requirements.txt
+
+
+
+
+
+echo "# Rag_System" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/deveshmundharikar/Rag_System.git
+git push -u origin main
+
+
+
+
+
+

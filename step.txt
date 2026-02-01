@@ -1,0 +1,40 @@
+1 st step: create inference-service/model_loader.py      INFERENCE SERVICE (LLM)
+2 nd step: create orchestrator/prompts/system_rag.txt       SYSTEM PROMPT
+3 rd step: create rag-service/vector_store.py          VECTOR STORE
+4 th step: create rag-service/ingest/loader.py           DOCUMENT LOADER
+5 th step: create rag-service/ingest/chunker.py          CHUNKER
+6 th step: create rag-service/ingest/embedder.py         EMBEDDER
+7 th step: create rag-service/ingest/run.py              INGESTION PIPELINE
+8 th step: create rag-service/retriever.py               RETRIEVER
+9 th step: create orchestrator/chains/rag_chain.py       RAG CHAIN
+10 th step: create orchestrator/router.py                 ORCHESTRATOR
+11 th step: create api-gateway/routes/chat.py             API ROUTE
+12 th step: create api-gateway/main.py                    API SERVER
+
+ How to executive
+
+ # Windows PowerShell
+ 
+$env:PYTHONPATH = "$pwd"
+uvicorn orchestrator.router:app --host 0.0.0.0 --port 8000 --reload
+
+ # Linux/Mac (Bash)
+ 
+cd services
+export PYTHONPATH="${PWD}:${PYTHONPATH}"
+uvicorn orchestrator.router:app --host 0.0.0.0 --port 8000 --reload
+
+
+
+Postman Configuration:
+Once the server is running, you can test it in Postman with these settings:
+
+Method: GET
+URL: http://localhost:8000/query
+Query Parameters:
+
+Key: query
+Value: Who is Monkey D. Luffy? (or any question about One Piece)
+
+end
+
