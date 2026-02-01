@@ -11,3 +11,24 @@
 11 th step: create api-gateway/routes/chat.py             API ROUTE
 12 th step: create api-gateway/main.py                    API SERVER
 
+ How to executive
+
+ # Windows PowerShell
+ 
+$env:PYTHONPATH = "$pwd"
+uvicorn orchestrator.router:app --host 0.0.0.0 --port 8000 --reload
+
+
+
+Postman Configuration:
+Once the server is running, you can test it in Postman with these settings:
+
+Method: GET
+URL: http://localhost:8000/query
+Query Parameters:
+
+Key: query
+Value: Who is Monkey D. Luffy? (or any question about One Piece)
+
+end
+
